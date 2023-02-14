@@ -28,7 +28,6 @@ fn range_proof_helper(v: u64, n: u8) {
 
     //Prover's scope
     // 0. Create witness data
-    let v: u64 = 4294967295;
     let blinding = Scalar::random(&mut thread_rng());
 
     let start = Instant::now();
