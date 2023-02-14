@@ -1,6 +1,6 @@
 
 use rand::thread_rng;
-use curve25519_dalek::ristretto::CompressedRistretto;
+//use curve25519_dalek::ristretto::CompressedRistretto;
 use curve25519_dalek::scalar::Scalar;
 use merlin::Transcript;
 use bulletproofs::{BulletproofGens, PedersenGens, RangeProof};
