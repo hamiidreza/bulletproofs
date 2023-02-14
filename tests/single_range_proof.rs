@@ -2,17 +2,14 @@
 use rand::thread_rng;
 use curve25519_dalek::ristretto::CompressedRistretto;
 use curve25519_dalek::scalar::Scalar;
-
 use merlin::Transcript;
-
 use bulletproofs::{BulletproofGens, PedersenGens, RangeProof};
-
 use std::time::Instant;
 
 #[cfg(test)]
 mod tests {
     use super::*;
-    
+
     #[test]
     fn test_range_proof() {
         let n: u8 = 64;
@@ -28,8 +25,6 @@ mod tests {
 fn range_proof_helper(v: u64, n: u8) {
     let pc_gens = PedersenGens::default();
     let bp_gens = BulletproofGens::new(128, 1);
-
-    let n: u8 = 64;
 
     //Prover's scope
     // 0. Create witness data
