@@ -1,6 +1,6 @@
 
 use rand::thread_rng;
-//use curve25519_dalek::ristretto::CompressedRistretto;
+use curve25519_dalek::ristretto::CompressedRistretto;
 use curve25519_dalek::scalar::Scalar;
 use merlin::Transcript;
 use bulletproofs::{BulletproofGens, PedersenGens, RangeProof};
@@ -12,7 +12,7 @@ mod tests {
 
     #[test]
     fn test_range_proof() {
-        let n: u8 = 64;
+        let n: u8 = 64; // Note that if !(n == 8 || n == 16 || n == 32 || n == 64), the code returns Err(ProofError::InvalidBitsize)!
         let v: u64 = 4294967295;
         println!(
             "A range proof statement \"{} < 2^{}\"",
